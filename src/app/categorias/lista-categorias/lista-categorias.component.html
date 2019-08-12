@@ -17,7 +17,7 @@
       </thead>
       <tbody>
         <tr *ngFor="let categoria of categorias | async" >
-          <th scope="row">{{categoria.key}}</th>
+          <th scope="row">{{ categoria.key }}</th>
           <td>{{ categoria.nome }}</td>
           <td>{{ categoria.descricao }}</td>
           <td class="edit">
@@ -31,3 +31,4 @@
     </table>
   </div>
 </div>
+

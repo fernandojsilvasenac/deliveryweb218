@@ -32,8 +32,18 @@ categoriasRef: AngularFireList<any>;
 
   }
 
-  remove(){
+  remove(key: string){
+    // return new Promise((resolve, reject) => {
+    //       const subscribe = this.getProdutosByCategoria(key).subscribe((produtos: any) => {
+    //         subscribe.unsubscribe();
 
+    //         if (produtos.length == 0) {
+              return this.categoriasRef.remove(key);
+    //         } else {
+    //           reject('Não é possível excluir a categoria pois ela tem produtos associados.')
+    //         }
+    //       });
+    // });
   }
 
 
