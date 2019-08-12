@@ -10,6 +10,9 @@ import { HomeLayoutComponent } from './layout/home-layout/home-layout.component'
 import { LoginLayoutComponent } from './layout/login-layout/login-layout.component';
 import { FormCategoriasComponent } from './categorias/form-categorias/form-categorias.component';
 import { ListaCategoriasComponent } from './categorias/lista-categorias/lista-categorias.component';
+import { environment } from '../environments/environment';
+import { AngularFireModule } from '@angular/fire';
+import { AngularFireDatabaseModule } from '@angular/fire/database';
 
 @NgModule({
   declarations: [
@@ -24,7 +27,9 @@ import { ListaCategoriasComponent } from './categorias/lista-categorias/lista-ca
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFireDatabaseModule
   ],
   providers: [],
   bootstrap: [AppComponent]
