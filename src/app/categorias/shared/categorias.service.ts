@@ -12,8 +12,8 @@ categoriasRef: AngularFireList<any>;
     this.categoriasRef = this.db.list('categorias/');
    }
 
-  insert(){
-
+  insert(categoria: any) {
+    return this.categoriasRef.push(categoria);
   }
 
   update(){
