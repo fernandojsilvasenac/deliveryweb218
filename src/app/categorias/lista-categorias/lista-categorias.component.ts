@@ -12,7 +12,8 @@ export class ListaCategoriasComponent implements OnInit {
 categorias: Observable<any[]>;
 
   constructor(private categoriasService: CategoriasService,
-              private toastr: ToastrService) { }
+              private toastr: ToastrService
+              ) { }
 
   ngOnInit() {
     this.categorias = this.categoriasService.getAll();

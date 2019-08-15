@@ -16,8 +16,8 @@ categoriasRef: AngularFireList<any>;
     return this.categoriasRef.push(categoria);
   }
 
-  update(){
-
+  update(categoria: any, key: string) {
+    this.categoriasRef.update(key,categoria);
   }
 
   getAll() {
@@ -28,9 +28,16 @@ categoriasRef: AngularFireList<any>;
     )
   }
 
-  getByKey(){
+  getByKey(key: string) {
+    const path = 'categorias/'+key;
+    return this.db.object(path).snapshotChanges().pipe(
+      map(change => {
+        return ({ key: change.key, ...change.payload.val() });
+      })
+    );
 
   }
+
 
   remove(key: string){
     // return new Promise((resolve, reject) => {
