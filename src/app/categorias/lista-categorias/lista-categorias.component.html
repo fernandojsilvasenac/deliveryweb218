@@ -8,7 +8,6 @@
     <table class="table grid">
       <thead>
         <tr>
-
           <th scope="col">Nome</th>
           <th scope="col">Descricao</th>
           <th scope="col"></th>
@@ -17,7 +16,6 @@
       </thead>
       <tbody>
         <tr *ngFor="let categoria of categorias | async" >
-
           <td>{{ categoria.nome }}</td>
           <td>{{ categoria.descricao }}</td>
           <td class="edit">

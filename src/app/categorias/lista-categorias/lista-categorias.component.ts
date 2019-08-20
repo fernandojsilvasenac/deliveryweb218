@@ -21,6 +21,9 @@ categorias: Observable<any[]>;
 
   remover(key: string) {
     this.categoriasService.remove(key)
+      .then( (mensagem) => {
+        this.toastr.success('Categoria excluida com sucesso!');
+      })
       .catch((mensagem: string) => {
         this.toastr.error(mensagem);
       });

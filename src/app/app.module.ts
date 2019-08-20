@@ -6,6 +6,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { AngularFireModule } from '@angular/fire';
+import { AngularFireDatabaseModule } from '@angular/fire/database';
+import { AngularFireStorageModule } from '@angular/fire/storage';
 import { NavbarComponent } from './core/navbar/navbar.component';
 import { FooterComponent } from './core/footer/footer.component';
 import { DashboardComponent } from './core/dashboard/dashboard.component';
@@ -14,8 +17,6 @@ import { LoginLayoutComponent } from './layout/login-layout/login-layout.compone
 import { FormCategoriasComponent } from './categorias/form-categorias/form-categorias.component';
 import { ListaCategoriasComponent } from './categorias/lista-categorias/lista-categorias.component';
 import { environment } from '../environments/environment';
-import { AngularFireModule } from '@angular/fire';
-import { AngularFireDatabaseModule } from '@angular/fire/database';
 import { FormProdutosComponent } from './produtos/form-produtos/form-produtos.component';
 import { ListaProdutosComponent } from './produtos/lista-produtos/lista-produtos.component';
 
@@ -40,6 +41,7 @@ import { ListaProdutosComponent } from './produtos/lista-produtos/lista-produtos
     ReactiveFormsModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireDatabaseModule,
+    AngularFireStorageModule,
     ToastrModule.forRoot()
   ],
   providers: [],
