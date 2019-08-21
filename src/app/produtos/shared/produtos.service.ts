@@ -14,11 +14,13 @@ export class ProdutosService {
    }
 
   insert(produto: any) {
-    return this.produtosRef.push(produto);
+    // return this.produtosRef.push(produto);
+    return this.save(produto, null);
   }
 
   update(produto: any, key: string) {
-    this.produtosRef.update(key,produto);
+    // return this.produtosRef.update(key, produto);
+    return this.save(produto, key);
   }
 
   private save(produto: any, key: string) {

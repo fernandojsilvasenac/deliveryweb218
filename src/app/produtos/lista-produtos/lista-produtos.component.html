@@ -1,3 +1,41 @@
-<p>
-  lista-produtos works!
-</p>
+<h3>Produtos</h3>
+<hr>
+<div class="card">
+  <div class="card-header text-right">
+    <a class="btn btn-primary" role="button" [routerLink]="['/produtos/novo']">Novo produto</a>
+  </div>
+  <div class="card-body">
+    <table class="table grid">
+      <thead>
+        <tr>
+          <!-- <th scope="col">#</th> -->
+          <th scope="col">#</th>
+          <th scope="col">Nome</th>
+          <th scope="col">Descrição</th>
+          <th scope="col">Preço</th>
+          <th scope="col">Categoria</th>
+          <th scope="col"></th>
+          <th scope="col"></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let produto of produtos | async">
+          <!-- <th scope="row">{{produto.key}}</th> -->
+          <td>
+            <img [src]="produto.img" class="img-thumbnail" style="max-width: 50px;" [hidden]="!produto.img" />
+          </td>
+          <td>{{ produto.nome }}</td>
+          <td>{{ produto.descricao }}</td>
+          <td>{{ produto.preco | currency:"BRL" }}</td>
+          <td>{{ produto.categoriaNome }}</td>
+          <td class="edit">
+            <a class="btn btn-warning text-white" role="button" [routerLink]="['/produtos/editar', produto.key]"><i class="far fa-edit"></i></a>
+          </td>
+          <td class="delete">
+            <button class="btn btn-danger" (click)="remover(produto.key, produto.filePath)"><i class="far fa-trash-alt"></i></button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

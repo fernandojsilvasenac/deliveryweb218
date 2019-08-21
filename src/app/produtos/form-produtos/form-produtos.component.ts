@@ -45,6 +45,7 @@ export class FormProdutosComponent implements OnInit {
               preco: produtos.preco,
               categoriaKey: produtos.categoriaKey,
               categoriaNome: produtos.categoriaNome,
+              img: ''
             });
 
             this.imgUrl = produtos.img || '';
@@ -96,7 +97,7 @@ export class FormProdutosComponent implements OnInit {
       }
     }
 
-    removeImg() {
+    removerImg() {
       this.produtosService.removeImg(this.filePath, this.key);
       this.imgUrl = '';
       this.filePath = '';
@@ -104,12 +105,12 @@ export class FormProdutosComponent implements OnInit {
 
     onSubmit() {
       if (this.formProduto.valid) {
-        const result: Promise<{}>;
+        let result: Promise<{}>;
 
         if (this.key) {
-          this.result = this.categoriasService.update(this.formProduto.value, this.key);
+          result = this.produtosService.update(this.formProduto.value, this.key);
         } else {
-          result = this.categoriasService.insert(this.formProduto.value);
+          result = this.produtosService.insert(this.formProduto.value);
         }
 
         if (this.file) {
@@ -121,8 +122,8 @@ export class FormProdutosComponent implements OnInit {
           this.criarFormulario();
         }
 
-        this.router.navigate(['categorias']);
-        this.toastr.success('Categoria salva com sucesso!!!');
+        this.router.navigate(['produtos']);
+        this.toastr.success('Produtos salvo com sucesso!!!');
       }
     }
 
