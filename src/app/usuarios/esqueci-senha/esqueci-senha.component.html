@@ -1,0 +1,24 @@
+<div class="card card-login mx-auto mt-5">
+  <div class="card-header">Recuperar senha</div>
+  <div class="card-body">
+    <form [formGroup]="formEsqueciSenha" (ngSubmit)="onSubmit()">
+      <div class="form-group">
+        <label for="email">E-mail</label>
+        <input type="email" class="form-control" id="email" placeholder="E-mail" formControlName="email">
+      </div>
+      <div *ngIf="email.invalid && (email.dirty || email.touched)" class="alert alert-danger">
+        <div *ngIf="email.errors.required">
+          O e-mail é obrigatório.
+        </div>
+        <div *ngIf="email.errors.email">
+          O e-mail é inválido.
+        </div>
+      </div>
+
+      <button type="submit" class="btn btn-primary btn-block">Enviar e-mail</button>
+    </form>
+    <div class="text-center">
+      <a class="d-block small mt-3" [routerLink]="['/login']">Entrar</a>
+    </div>
+  </div>
+</div>

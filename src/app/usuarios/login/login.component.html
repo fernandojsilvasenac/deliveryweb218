@@ -1,0 +1,35 @@
+<div class="card card-login mx-auto mt-5">
+  <div class="card-header">Login</div>
+  <div class="card-body">
+    <form [formGroup]="formLogin" (ngSubmit)="onSubmit()">
+      <div class="form-group">
+        <label for="email">E-mail</label>
+        <input type="email" class="form-control" id="email" placeholder="E-mail" formControlName="email">
+      </div>
+      <div *ngIf="email.invalid && (email.dirty || email.touched)" class="alert alert-danger">
+        <div *ngIf="email.errors.required">
+          O e-mail é obrigatório.
+        </div>
+        <div *ngIf="email.errors.email">
+          O e-mail é inválido.
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="senha">Senha</label>
+        <input type="password" class="form-control" id="senha" placeholder="Senha" formControlName="senha">
+      </div>
+      <div *ngIf="senha.invalid && (senha.dirty || senha.touched)" class="alert alert-danger">
+        <div *ngIf="senha.errors.required">
+          A senha é obrigatório.
+        </div>
+      </div>
+
+      <button type="submit" class="btn btn-primary btn-block">Entrar</button>
+    </form>
+    <div class="text-center">
+      <a class="d-block small mt-3" [routerLink]="['/criar-conta']">Criar conta</a>
+      <a class="d-block small" [routerLink]="['/esqueci-senha']">Esqueci minha senha</a>
+    </div>
+  </div>
+</div>
