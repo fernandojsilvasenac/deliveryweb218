@@ -1,1 +1,60 @@
-<h2>Painel de Controle</h2>
+<h3>Dashboard</h3>
+<hr>
+
+<section class="mb-5" id="dashboard">
+  <div class="container-fluid">
+    <div class="row">
+
+      <div class="col-md">
+        <div class="card text-white bg-danger">
+          <div class="card-body">
+            <h2 class="card-title">??<!-- {{ totalAguardandoConfirmacao | async }} --></h2>
+            <p class="card-text">Aguardando confirmação</p>
+            <div class="icon">
+              <i class="fas fa-shopping-bag"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md">
+        <div class="card text-white bg-warning">
+          <div class="card-body">
+            <h2 class="card-title">??<!-- {{ totalEmPreparacao | async }} --></h2>
+            <p class="card-text">Em preparação</p>
+            <div class="icon">
+              <i class="far fa-check-circle"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md">
+        <div class="card text-white bg-primary">
+          <div class="card-body">
+            <h2 class="card-title">??<!-- {{ totalSaiuParaEntrega | async }} --></h2>
+            <p class="card-text">Saiu para entrega</p>
+            <div class="icon">
+              <i class="fas fa-motorcycle"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md">
+        <div class="card text-white bg-success">
+          <div class="card-body">
+            <h2 class="card-title">??<!-- {{ totalEntregue | async }} --></h2>
+            <p class="card-text">Entregue</p>
+            <div class="icon">
+              <i class="fas fa-check-circle"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- <app-lista-pedidos [dashboardMode]="true"></app-lista-pedidos> -->

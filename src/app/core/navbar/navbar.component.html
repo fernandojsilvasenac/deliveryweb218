@@ -4,7 +4,7 @@
     <span class="navbar-toggler-icon"></span>
   </button>
   <div class="collapse navbar-collapse" id="navbarNavDropdown">
-    <ul class="navbar-nav">
+    <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
       <li class="nav-item active">
         <a class="nav-link" [routerLink]="['/dashboard']">Dashboard <span class="sr-only">(Página atual)</span></a>
       </li>
@@ -19,11 +19,28 @@
           Pedidos
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-          <a class="dropdown-item" href="#">Ação</a>
-          <a class="dropdown-item" href="#">Outra ação</a>
-          <a class="dropdown-item" href="#">Algo mais aqui</a>
+          <a class="dropdown-item" href="#">Em preparação</a>
+          <a class="dropdown-item" href="#">Saiu pra entrega</a>
+          <a class="dropdown-item" href="#">Entregue</a>
         </div>
       </li>
     </ul>
+    <span class="navbar-text mr-2">
+      Bem vindo, <!--{{usuario.nome}}-->
+    </span>
+    <span class="navbar-text">
+      <div class="dropdown">
+        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown"
+          aria-haspopup="true" aria-expanded="false">
+          <!-- <i class="fas fa-user" *ngIf="!usuario.img" ></i> -->
+          <!-- <img [src]="usuario.img" *ngIf="usuario.img" width="20" /> -->
+        </button>
+        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton">
+          <!-- <a class="dropdown-item text-dark" [routerLink]="['/usuario/perfil']">Perfil do usuário</a> -->
+          <!-- <a class="dropdown-item text-dark" [routerLink]="['/usuario/enderecos']">Meus endereçoes</a> -->
+          <button class="btn btn-link dropdown-item text-dark" (click)="sair()">Sair</button>
+        </div>
+      </div>
+    </span>
   </div>
 </nav>
